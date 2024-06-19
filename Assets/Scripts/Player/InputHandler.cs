@@ -150,7 +150,7 @@ namespace ds
 
             if(rt_Input)
             {
-                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                playerAttacker.HandleRTAction();
             }
         }
 

@@ -89,6 +89,19 @@ namespace ds
             }
         }
 
+        public void HandleRTAction()
+        {
+            if (playerInventory.rightWeapon.isMeleeWeapon)
+            {
+                PerformRTMeleeAction();
+            }
+
+            else if (playerInventory.rightWeapon.isSpellCaster || playerInventory.rightWeapon.isFaithCaster || playerInventory.rightWeapon.isPyroCaster)
+            {
+                return;
+            }
+        }
+
         #endregion
 
         #region Attack Action
@@ -114,6 +127,31 @@ namespace ds
 
                 animatorHandler.anim.SetBool("isUsingRightHand", true);
                 HandleLightAttack(playerInventory.rightWeapon);
+            }
+        }
+
+        public void PerformRTMeleeAction()
+        {
+            if (playerManager.canDoCombo)
+            {
+                inputHandler.comboFlag = true;
+                HandleWeaponCombo(playerInventory.rightWeapon);
+                inputHandler.comboFlag = false;
+            }
+
+            else
+            {
+                if (playerManager.isInteracting)
+                {
+                    return;
+                }
+                if (playerManager.canDoCombo)
+                {
+                    return;
+                }
+
+                animatorHandler.anim.SetBool("isUsingRightHand", true);
+                HandleHeavyAttack(playerInventory.rightWeapon);
             }
         }
 
