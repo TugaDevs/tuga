@@ -60,7 +60,7 @@ namespace ds
                 LoadLeftWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
                 #region Handle Left Weapon Idle Animations
-                if (weaponItem != null )
+                if (weaponItem != null)
                 {
                     animator.CrossFade(weaponItem.left_hand_idle, 0.2f);
                 }
