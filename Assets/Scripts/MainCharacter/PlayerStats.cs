@@ -9,7 +9,7 @@ namespace ds
         PlayerManager playerManager;
         public HealthBar healthBar;
         public StaminaBar staminaBar;
-        public FocusPointBar focusPointBar;
+        public FocusBar focusBar;
         AnimatorHandler animatorHandler;
 
         public float staminaRegenerationAmount = 25;
@@ -20,7 +20,7 @@ namespace ds
             playerManager = GetComponent<PlayerManager>();
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
-            focusPointBar = FindObjectOfType<FocusPointBar>();
+            focusBar = FindObjectOfType<FocusBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
         void Start()
@@ -37,8 +37,8 @@ namespace ds
 
             maxFocusPoints = SetMaxFocusPointsFromFocusLevel();
             currentFocusPoints = maxFocusPoints;
-            focusPointBar.SetMaxFocusPoint(maxFocusPoints);
-            focusPointBar.SetCurrentFocusPoint(currentFocusPoints);
+            focusBar.SetMaxFocusPoint(maxFocusPoints);
+            focusBar.SetCurrentFocusPoint(currentFocusPoints);
              
         }
 
@@ -131,7 +131,7 @@ namespace ds
                 currentFocusPoints = 0;
             }
 
-            focusPointBar.SetCurrentFocusPoint(currentFocusPoints);
+            focusBar.SetCurrentFocusPoint(currentFocusPoints);
 
         }
 

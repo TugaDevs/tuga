@@ -18,9 +18,8 @@ namespace ds
         public GameObject interactableUIGameObject;
         public GameObject itemInteractableGameObject;
 
-        public bool isInteracting;
-
         [Header("Player Flags")]
+        public bool isInteracting;
         public bool isSprinting;
         public bool isInAir;
         public bool isGrounded;

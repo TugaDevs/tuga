@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace ds
 {
-    public class FocusPointBar : MonoBehaviour
+    public class FocusBar : MonoBehaviour
     {
         public Slider slider;
 
